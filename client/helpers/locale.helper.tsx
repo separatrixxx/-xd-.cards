@@ -1,5 +1,6 @@
-import { en } from "locales/en.locale";
-import { ru } from "locales/ru.locale";
+import { en } from "../locales/en.locale";
+import { ru } from "../locales/ru.locale";
+
 
 type localeType = typeof en | typeof ru;
 

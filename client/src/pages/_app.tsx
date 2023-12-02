@@ -8,10 +8,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>MOEX Hack</title>
-        <meta name='description' content='MOEX Hack' />
-        <meta property='og:title' content='MOEX Hack' />
-        <meta property='og:description' content='MOEX Hack' />
+        <title>[xd].cards</title>
+        <meta name='description' content='[xd].cards' />
+        <meta property='og:title' content='[xd].cards' />
+        <meta property='og:description' content='[xd].cards' />
         <meta charSet="utf-8" />
         <link rel="icon" href="/vercel.svg" type='image/svg+xml' />
       </Head>
