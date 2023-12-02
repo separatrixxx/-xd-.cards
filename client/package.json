@@ -1,0 +1,32 @@
+{
+  "name": "xd.cards",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "axios": "^1.6.2",
+    "date-fns": "^2.30.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "framer-motion": "^10.16.12",
+    "react-hot-toast": "^2.4.1",
+    "stylelint": "^13.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-order-config-standard": "^0.1.3",
+    "typescript": "^5"
+  }
+}
