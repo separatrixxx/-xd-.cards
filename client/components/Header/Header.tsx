@@ -13,8 +13,8 @@ export const Header = (): JSX.Element => {
     const [lastScroll, setLastScroll] = useState<number>(0);
     const [flag, setFlag] = useState<boolean>(false);
 
-    const width = useResizeW();
     const scrollPosition = useScrollY();
+    const width = useResizeW();
 
     if (scrollPosition - lastScroll >= 200 && scrollPosition > lastScroll) {
         setFlag(true);
