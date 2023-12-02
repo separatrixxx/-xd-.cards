@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useScrollY } from '../../hooks/useScrollY';
 import { useResizeW } from '../../hooks/useResize';
 import { Htag } from '../Htag/Htag';
-import { LocaleChange } from '../../LocaleChange/LocaleChange';
+import { LocaleChange } from '../LocaleChange/LocaleChange';
 import cn from 'classnames';
 
 
