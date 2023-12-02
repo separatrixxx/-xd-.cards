@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property='og:title' content='[xd].cards' />
         <meta property='og:description' content='[xd].cards' />
         <meta charSet="utf-8" />
-        <link rel="icon" href="/vercel.svg" type='image/svg+xml' />
+        <link rel="icon" href="/logo.svg" type='image/svg+xml' />
       </Head>
       <Component {...pageProps} />
     </>

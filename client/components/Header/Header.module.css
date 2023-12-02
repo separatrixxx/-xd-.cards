@@ -1,0 +1,39 @@
+.header {
+	position: fixed;
+	z-index: 2;
+
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	padding: 18px 0 18px 0;
+
+	background: var(--background);
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+}
+
+.link {
+	transition-duration: 300ms;
+
+	color: var(--primary) !important;
+}
+
+.link:active {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+	color: var(--white);
+}
+
+.logo {
+	font-size: 32px !important;
+	font-weight: 600 !important;
+}
+
+@media (min-width: 1024px) {
+	.link:hover {
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+		color: var(--white) !important;
+	}
+}

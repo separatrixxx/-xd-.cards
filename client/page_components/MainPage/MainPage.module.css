@@ -1,7 +1,9 @@
 .wrapper {
 	display: grid;
+	align-items: center;
 
 	width: 100%;
+	padding-top: 100px;
 	justify-items: center;
-	gap: 60px;
+	gap: 20px;
 }
