@@ -18,10 +18,12 @@ sniffio           1.3.0
 starlette         0.27.0
 typing_extensions 4.8.0
 uvicorn           0.24.0.post1
+PIL               9.5.0 (ВАЖНО!!!)
+pynter            0.1.6
 ```
 Для быстрой установки:
 ```
-pip install fastapi uvicorn
+pip install fastapi uvicorn pynter PIL==9.5.0
 ```
 Запуск сервера:
 ```
