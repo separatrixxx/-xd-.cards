@@ -1,14 +1,13 @@
 from fastapi import FastAPI
-import test_routes as test
+import generate_card_router as generate_card
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.utils import get_openapi
 
 app = FastAPI()
 
-app.include_router(test.router)
+app.include_router(generate_card.router)
 
 origins = [
-	
     "http://localhost"
     "https://localhost",
     "http://localhost:8000",
