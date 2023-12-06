@@ -7,7 +7,7 @@ class GenerateCardService:
     
     def __init__(self):
         self.__stable_diffusion_service = service.stable_diffusion_service.StableDiffusionService()
-        self.__font_path = "./font.ttf"
+        self.__font_path = "./service/font.ttf"
 
     def generate_card(self, params_for_image : request_models.QueryParams):
         if params_for_image.text_stable_diffusion == None or params_for_image.text_stable_diffusion == "":
