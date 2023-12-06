@@ -2,6 +2,7 @@ import service.stable_diffusion_service
 import model.request_models as request_models
 from pynter.pynter import generate_captioned
 from io import BytesIO
+import base64
 
 class GenerateCardService:
     
@@ -12,13 +13,16 @@ class GenerateCardService:
     def generate_card(self, params_for_image : request_models.QueryParams):
         if params_for_image.text_stable_diffusion == None or params_for_image.text_stable_diffusion == "":
             raise ValueError("No text for Stable Diffusion text was defined")
-        image_bytes = self.__stable_diffusion_service.get_stable_diffusion_image(params_for_image.text_stable_diffusion)
-        if (b'loading' in image_bytes.getvalue()):
-            raise ValueError("Stable Diffusion needs some time (around 10-13 minutes) to cool down") 
+        image_bytes = ""
+        try:
+            image_bytes = self.__stable_diffusion_service.get_stable_diffusion_image(params_for_image.text_stable_diffusion)
+        except Exception as e:
+            raise ValueError(e)
         if (params_for_image.text_image != None and params_for_image.text_image != ""):
             im = generate_captioned(params_for_image.text_image, image_path=image_bytes, size=(512, 512),
                                 font_path=self.__font_path, filter_color=(0, 0, 0, 20))
             image_bytes_result = BytesIO()
             im.convert("RGB").save(image_bytes_result, format='PNG')
             image_bytes = image_bytes_result
-        return image_bytes
+        image_bytes_base64 = base64.b64encode(image_bytes.getvalue())
+        return image_bytes_base64
