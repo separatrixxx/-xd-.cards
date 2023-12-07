@@ -2,6 +2,7 @@ import service.stable_diffusion_service
 import model.request_models as request_models
 from pynter.pynter import generate_captioned
 from io import BytesIO
+import base64
 
 class GenerateCardService:
     
@@ -23,4 +24,5 @@ class GenerateCardService:
             image_bytes_result = BytesIO()
             im.convert("RGB").save(image_bytes_result, format='PNG')
             image_bytes = image_bytes_result
-        return image_bytes
+        image_bytes_base64 = base64.b64encode(image_bytes.getvalue())
+        return image_bytes_base64
