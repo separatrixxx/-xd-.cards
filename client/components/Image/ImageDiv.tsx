@@ -5,7 +5,7 @@ import { Htag } from '../Htag/Htag';
 import cn from 'classnames';
 
 
-export const ImageDiv = ({ image, text }: ImageDivProps): JSX.Element => {
+export const ImageDiv = ({ image, text, isLoading }: ImageDivProps): JSX.Element => {
 	return <div className={cn(styles.imageDiv, {
         [styles.imageDivFull]: !image,
     })}>
@@ -21,9 +21,12 @@ export const ImageDiv = ({ image, text }: ImageDivProps): JSX.Element => {
                     priority={true}
                 />
             :
-                <Htag tag='s' className={styles.text}>
-                    {text}
-                </Htag>
+                isLoading ? 
+                    <span className={styles.loader}></span>
+                :
+                    <Htag tag='s' className={styles.text}>
+                        {text}
+                    </Htag>
         }
     </div>
 };
