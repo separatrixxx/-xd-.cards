@@ -14,13 +14,7 @@ router = APIRouter(
 )
 
 
-@router.post("/generateCard", responses=
-    {
-        400: {"model": response_models.Response400},
-        200: {"content": response_models.Response200}
-    },
-    response_class=Response
-)
+@router.post("/generateCard")
 async def generate_card(params_for_image: request_models.QueryParams):
     try:
         image_bytes = generate_card_service.generate_card(params_for_image)
