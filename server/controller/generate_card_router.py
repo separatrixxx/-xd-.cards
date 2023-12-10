@@ -14,11 +14,17 @@ router = APIRouter(
 )
 
 
-@router.post("/generateCard")
+@router.post("/generateCard", responses=
+    {
+        400: {"model": response_models.Response400},
+        200: {
+            "content": {"image/png": {}}
+        }
+    },
+    response_class=Response)
 async def generate_card(params_for_image: request_models.QueryParams):
     try:
         image_bytes = generate_card_service.generate_card(params_for_image)
-        json_compatible_data = jsonable_encoder(response_models.Response200(detail = str(image_bytes)))
-        return JSONResponse(content=json_compatible_data)
+        return Response(content=image_bytes, media_type="image/png")
     except Exception as e: 
         raise HTTPException(status_code=400, detail=str(e))
